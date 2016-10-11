@@ -1,0 +1,186 @@
+Ashwini-Rao:Home$ java -version
+Ashwini-Rao:Home$ ./validator.sh start
+Option selected : start
+Server started.
+Ashwini-Rao:Home$ ./validator.sh 2,4,5
+Option selected : 2,4,5
+Executing triangle service with sides  side one=2 ,side two = 4 ,side three = 5 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   165    0   165    0     0    694      0 --:--:-- --:--:-- --:--:--   696
+{
+   "triangleType" : "SCALENE",
+   "message" : "Success",
+   "status" : 0,
+   "triangleSideOne" : 2,
+   "errors" : null,
+   "triangleSideThree" : 5,
+   "timestamp" : 1476168992350,
+   "triangleSideTwo" : 4
+}
+Ashwini-Rao:Home$ ./validator.sh 2,4,4
+Option selected : 2,4,4
+Executing triangle service with sides  side one=2 ,side two = 4 ,side three = 4 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   167    0   167    0     0   9371      0 --:--:-- --:--:-- --:--:--  9823
+{
+   "triangleSideThree" : 4,
+   "triangleType" : "ISOSCELES",
+   "triangleSideTwo" : 4,
+   "triangleSideOne" : 2,
+   "timestamp" : 1476168997522,
+   "errors" : null,
+   "message" : "Success",
+   "status" : 0
+}
+Ashwini-Rao:Home$ ./validator.sh 3,3,3
+Option selected : 3,3,3
+Executing triangle service with sides  side one=3 ,side two = 3 ,side three = 3 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   169    0   169    0     0  13420      0 --:--:-- --:--:-- --:--:-- 14083
+{
+   "message" : "Success",
+   "timestamp" : 1476169008318,
+   "errors" : null,
+   "triangleSideThree" : 3,
+   "status" : 0,
+   "triangleSideOne" : 3,
+   "triangleType" : "EQUILATERAL",
+   "triangleSideTwo" : 3
+}
+Ashwini-Rao:Home$ ./validator.sh 1,0,1
+Option selected : 1,0,1
+Executing triangle service with sides  side one=1 ,side two = 0 ,side three = 1 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   323    0   323    0     0   8339      0 --:--:-- --:--:-- --:--:--  8500
+{
+   "timestamp" : 1476169014051,
+   "errors" : [
+      {
+         "errorCode" : 1000,
+         "errorMessage" : "Invalid Triangle : Triangle sides provided does not form a triangle and it does not conform to triangle inequality theorem."
+      },
+      {
+         "errorCode" : 1002,
+         "errorMessage" : "Invalid Triangle : Triangle side length cannot be zero."
+      }
+   ],
+   "message" : "Failure",
+   "status" : 400
+}
+Ashwini-Rao:Home$ ./validator.sh 1,-1,1
+Option selected : 1,-1,1
+Executing triangle service with sides  side one=1 ,side two = -1 ,side three = 1 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   327    0   327    0     0  13223      0 --:--:-- --:--:-- --:--:-- 13625
+{
+   "timestamp" : 1476169048724,
+   "status" : 400,
+   "errors" : [
+      {
+         "errorCode" : 1000,
+         "errorMessage" : "Invalid Triangle : Triangle sides provided does not form a triangle and it does not conform to triangle inequality theorem."
+      },
+      {
+         "errorCode" : 1001,
+         "errorMessage" : "Invalid Triangle : Triangle side length cannot be negative."
+      }
+   ],
+   "message" : "Failure"
+}
+Ashwini-Rao:Home$ ./validator.sh 1,,1
+Option selected : 1,,1
+Executing triangle service with sides  side one=1 ,side two =  ,side three = 1 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   323    0   323    0     0  16380      0 --:--:-- --:--:-- --:--:-- 16150
+{
+   "errors" : [
+      {
+         "errorMessage" : "Invalid Triangle : Triangle sides provided does not form a triangle and it does not conform to triangle inequality theorem.",
+         "errorCode" : 1000
+      },
+      {
+         "errorCode" : 1002,
+         "errorMessage" : "Invalid Triangle : Triangle side length cannot be zero."
+      }
+   ],
+   "timestamp" : 1476169060001,
+   "message" : "Failure",
+   "status" : 400
+}
+Ashwini-Rao:Home$ ./validator.sh 1,2,1
+Option selected : 1,2,1
+Executing triangle service with sides  side one=1 ,side two = 2 ,side three = 1 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   231    0   231    0     0  12835      0 --:--:-- --:--:-- --:--:-- 13588
+{
+   "message" : "Failure",
+   "errors" : [
+      {
+         "errorMessage" : "Invalid Triangle : Triangle sides provided does not form a triangle and it does not conform to triangle inequality theorem.",
+         "errorCode" : 1000
+      }
+   ],
+   "status" : 400,
+   "timestamp" : 1476169183968
+}
+Ashwini-Rao:Home$ ./validator.sh
+Invalid Arguments
+
+Usage Options
+
+	./validator.sh 
+ Option 1 :- /validator.sh start 
+ Option 2 :- /validator.sh stop 
+ Option 3 :- /validator.sh  triangleSideOneLength,triangleSideTwoLength,triangleSideThreeLength  
+
+Ashwini-Rao:Home$ ./validator.sh 
+Invalid Arguments
+
+Usage Options
+
+	./validator.sh 
+ Option 1 :- /validator.sh start 
+ Option 2 :- /validator.sh stop 
+ Option 3 :- /validator.sh  triangleSideOneLength,triangleSideTwoLength,triangleSideThreeLength  
+
+Ashwini-Rao:Home$ ./validator.sh a,b,c
+Option selected : a,b,c
+Executing triangle service with sides  side one=a ,side two = b ,side three = c 
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   323    0   323    0     0  14216      0 --:--:-- --:--:-- --:--:-- 14681
+{
+   "status" : 400,
+   "errors" : [
+      {
+         "errorCode" : 1000,
+         "errorMessage" : "Invalid Triangle : Triangle sides provided does not form a triangle and it does not conform to triangle inequality theorem."
+      },
+      {
+         "errorMessage" : "Invalid Triangle : Triangle side length cannot be zero.",
+         "errorCode" : 1002
+      }
+   ],
+   "timestamp" : 1476169230437,
+   "message" : "Failure"
+}
+Ashwini-Rao:Home$ ./validator.sh stop
+Option selected : stop
+Killing server at 11407
+Server stopped.
+Ashwini-Rao:Home$ 
